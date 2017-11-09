@@ -259,7 +259,19 @@
             {
                 this.dots.callAll('revive');
             }
-
+	 },
+	  eatCoin: function(pacman,coin){
+		     
+          	coin.kill();
+		     
+	  this.score+=15;
+            	this.scoreText.text= 'Score: ' + this.score;
+	  var audio = new Audio('assets/bonus'); 
+           	audio.play()
+            	if(this.coins.total===0)
+            	{
+                	this.coins.callAll('revive');
+           	}
         },
 
         update: function () {
